@@ -22,100 +22,112 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <style>
+
+    /*======================================
+    //--//-->   ABOUT
+    ======================================*/
+
+    .about-mf .box-shadow-full {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .about-mf .about-img {
+      margin-bottom: 2rem;
+    }
+
+    .about-mf .about-img img {
+      margin-left: 10px;
+    }
 
 
-<style>
+    .skill-mf .progress {
+      /* background-color: #cde1f8; */
+      margin: .5rem 0 1.2rem 0;
+      border-radius: 0;
+      height: .7rem;
+    }
 
-/*======================================
-//--//-->   ABOUT
-======================================*/
-
-.about-mf .box-shadow-full {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-.about-mf .about-img {
-  margin-bottom: 2rem;
-}
-
-.about-mf .about-img img {
-  margin-left: 10px;
-}
+    .skill-mf .progress .progress-bar {
+      height: .7rem;
+      background-color: #ffbd39;
+    }
 
 
-.skill-mf .progress {
-  /* background-color: #cde1f8; */
-  margin: .5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: .7rem;
-}
+    /* Animation styles */
+    #typing-animation {
+      position: relative;
+      font-size: 30px;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typing 3s steps(20, end) infinite;
+    }
 
-.skill-mf .progress .progress-bar {
-  height: .7rem;
-  background-color: #ffbd39;
-}
+    #typing-animation:before {
+      content: "";
+      /* position: absolute; */
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #ccc;
+      animation: typing-cursor 0.5s ease-in-out infinite;
+    }
 
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
 
-/* Animation styles */
-#typing-animation {
-  position: relative;
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 3s steps(20, end) infinite;
-}
-
-#typing-animation:before {
-  content: "";
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #ccc;
-  animation: typing-cursor 0.5s ease-in-out infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes typing-cursor {
-  from {
-    width: 5px;
-  }
-  to {
-    width: 0;
-  }
-}
+    @keyframes typing-cursor {
+      from {
+        width: 5px;
+      }
+      to {
+        width: 0;
+      }
+    }
 
 
-/* project image zoom effect */
+    /* project image zoom effect */
 
-.zoom-effect {
-  overflow: hidden;
-  transition: transform 0.3s ease-out;
-}
+    .zoom-effect {
+      overflow: hidden;
+      transition: transform 0.3s ease-out;
+    }
 
-.zoom-effect:hover {
-  transform: scale(1.1);
-}
+    .zoom-effect:hover {
+      transform: scale(1.1);
+    }
 
+    .hero-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100vh;
+    }
 
-</style>
+    .left-content {
+      max-width: 50%;
+    }
 
+    .right-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    </style>
 
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
 	  
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
@@ -135,75 +147,59 @@
 	      </div>
 	    </div>
 	  </nav>
+	  
 	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
-	       <div class="slider-item ">
-	      	<div class="overlay"></div>
-	         <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img">
-					<!-- style="background-image:url(images/bg_1.png);" -->
-	          	 <div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
-			            	<h1 class="mb-4 mt-3">I'm <span>Jogi Praveen</span></h1>
+	    <div class="container hero-content">
+	      <div class="left-content">
+	        <span class="subheading">Hello!</span>
+	        <h1 class="mb-4 mt-3">I'm <span>Jogi Praveen</span></h1>
 
-						<!-- Element to contain animated typing -->
-						<span id="typing-animation"></span>
+	        <!-- Element to contain animated typing -->
+	        <span id="typing-animation"></span>
 
-						<script>
+	        <script>
+	          // Initialize the typing animation
+	          const typingAnimationElement = document.getElementById('typing-animation');
 
-						// Initialize the typing animation
-						const typingAnimationElement = document.getElementById('typing-animation');
+	          // Create an array of typing text
+	          const typingTexts = [
+	            'Data Scientist',
+	            'Machine Learning',
+	            'Generative AI   ',
+	          ];
 
-						// Create an array of typing text
-						const typingTexts = [
-						'Data Scientist',
-						'Machine Learning',
-						'Generative AI   ',
-						];
+	          // Create a function to display the typing animation for a given text
+	          function playTypingAnimation(text) {
+	            // Loop through each character and add it to the element
+	            for (let i = 0; i < text.length; i++) {
+	              setTimeout(() => {
+	                typingAnimationElement.textContent += text[i];
+	              }, i * 200); // Increase the delay to slow down the typing animation
+	            }
 
-						// Create a function to display the typing animation for a given text
-						function playTypingAnimation(text) {
-						// Loop through each character and add it to the element
-						for (let i = 0; i < text.length; i++) {
-							setTimeout(() => {
-							typingAnimationElement.textContent += text[i];
-							}, i * 200); // Increase the delay to slow down the typing animation
-						}
+	            // Once the animation is complete, reset the text and start over
+	            setTimeout(() => {
+	              typingAnimationElement.textContent = '';
+	              playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+	            }, text.length * 200);
+	          }
 
-						// Once the animation is complete, reset the text and start over
-						setTimeout(() => {
-							typingAnimationElement.textContent = '';
-							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-						}, text.length * 200);
-						}
+	          // Start the typing animation loop
+	          playTypingAnimation(typingTexts[0]);
+	        </script>
 
-						// Start the typing animation loop
-						playTypingAnimation(typingTexts[0]);
-
-						</script>
-
-						<br>
-						<br>
-			            <h2>Data Enthusiast</h2>
-						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-						<!-- <br> -->
-			            <p><a href="https://www.linkedin.com/in/jogi-praveen-8a23b2238/" class="btn btn-primary py-3 px-4">LinkedIn</a> 
-							<a href="https://github.com/praveen9131" class="btn btn-white btn-outline-white py-3 px-4">Github</a></p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
+	        <br>
+	        <br>
+	        <h2>Data Enthusiast</h2>
+	        <p>
+	          <a href="https://www.linkedin.com/in/jogi-praveen-8a23b2238/" class="btn btn-primary py-3 px-4">LinkedIn</a>
+	          <a href="https://github.com/praveen9131" class="btn btn-white btn-outline-white py-3 px-4">Github</a>
+	        </p>
 	      </div>
-		</div>
-    </section>
+	    </div>
+	  </section>
 
-
-
-    <section class="ftco-about img ftco-section ftco-no-pb" id="`">
+    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
     	<div class="container">
 			<div class="row">
 				<div class="row d-flex align-items-stretch">
@@ -308,9 +304,6 @@
 		</div>
     </section>
 
-
-
-	
     <section class="ftco-section ftco-no-pb" id="resume-section">
     	<div class="container">
     		<div class="row justify-content-center pb-5">
@@ -320,7 +313,6 @@
             <p>Data science enthusiast with experience driving business strategies through data-driven insights. Proven expertise in data science, statistical analysis, machine learning algorithms and project management.</p>
           </div>
         </div>
-
 
 		<div class="row">
 			<h1 class="big-4">Work Experience</h1>
@@ -332,18 +324,16 @@
 			<div class="col-md-6">
 				<div class="resume-wrap ftco-animate">
 					<span class="date">Mar 2024-Present</span>
-					<h2>Aritificial intelligence & Machine learning Intern</h2>
+					<h2>Artificial Intelligence & Machine Learning Intern</h2>
 					<span class="position">Brainmeasures</span>
 					<!-- <p class="mt-4">Merkle, a leading CXM and media company with over 10K+ professionals globally. It's a part of Dentsu International.  -->
 						<ul>
 							<li>Developed AI applications using OpenAI and Langchain, automating question and content generation to enhance educational services.</li>
 							<li>Improved user engagement and learning outcomes through advanced question generation algorithms and scalable content creation, ensuring high-quality outputs.</li>
 							<li>Integrated the question generation system with existing platforms to provide seamless user experiences</li>
-
 						</ul>
 					</p>
 				</div>
-
 			</div>
 
 			<div class="col-md-6">
@@ -356,11 +346,9 @@
 							<li>Optimized data integration solutions with Neo4j for health data applications.</li>
 							<li>Collected data from various sources and optimized data integration solutions with Neo4j for health data applications.</li>
 							<li>Developed and implemented data scraping tools using Beautiful Soup, enhancing data collection processes</li>
-							
 						</ul>
 					</p>
 				</div>
-
 			</div>
 		</div>
 
@@ -368,49 +356,73 @@
 	<br>
 
 		<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">Feb 2024</span>
-						<h2>Generative Ai Intern</h2>
-						<span class="position">Zymbia Interactive Technologies Private Limited</span>
-						<!-- <p class="mt-4">Merkle, a leading CXM and media company with over 10K+ professionals globally. It's a part of Dentsu International.  -->
-							<ul>
-								<li> Enhanced chatbot responses through adaptive utilization of the OpenAI API and advanced prompting techniques,
-									improving user interaction quality</li>
-								<li>Integrated sophisticated AI concepts such as prompt routing and Retrieval-Augmented Generation (RAG) to augment
-									chatbot functionality, expanding its capabilities.</li>
-								<li> Designed and implemented a user-friendly chatbot interface using Streamlit, showcasing skills in software interface design
-									and user experience enhancement.</li>
-							</ul>
-						</p>
-					</div>
-
-				</div>
-
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">Sep 2023– Dec 2023</span>
-						<h2> Machine learning Intern</h2>
-						<span class="position">WebMobi360</span>
-						<!-- <p class="mt-4">iQuanti is a data-driven digital marketing analytics and solutions company, helps top 100 global brands.  -->
-							<ul>
-								<li> Designed and implemented a state-of-the-art face emotion recognition system, integrating advanced computer vision
-									techniques. Engineered responsive software solutions for seamless user interaction, showcasing a blend of technical
-									expertise in both computer vision and software development.</li>
-								
-<!-- 								<li>.</li> -->
-							</ul>
-						</p>
-					</div>
-
+			<div class="col-md-6">
+				<div class="resume-wrap ftco-animate">
+					<span class="date">Feb 2024</span>
+					<h2>Generative AI Intern</h2>
+					<span class="position">Zymbia Interactive Technologies Private Limited</span>
+					<!-- <p class="mt-4">Merkle, a leading CXM and media company with over 10K+ professionals globally. It's a part of Dentsu International.  -->
+						<ul>
+							<li>Enhanced chatbot responses through adaptive utilization of the OpenAI API and advanced prompting techniques, improving user interaction quality.</li>
+							<li>Integrated sophisticated AI concepts such as prompt routing and Retrieval-Augmented Generation (RAG) to augment chatbot functionality, expanding its capabilities.</li>
+								<li>Designed and implemented a user-friendly chatbot interface using Streamlit, showcasing skills in software interface design and user experience enhancement.</li>
+						</ul>
+					</p>
 				</div>
 			</div>
 
+			<div class="col-md-6">
+				<div class="resume-wrap ftco-animate">
+					<span class="date">Sep 2023– Dec 2023</span>
+					<h2>Machine Learning Intern</h2>
+					<span class="position">WebMobi360</span>
+					<!-- <p class="mt-4">iQuanti is a data-driven digital marketing analytics and solutions company, helps top 100 global brands.  -->
+						<ul>
+							<li>Designed and implemented a state-of-the-art face emotion recognition system, integrating advanced computer vision techniques. Engineered responsive software solutions for seamless user interaction, showcasing a blend of technical expertise in both computer vision and software development.</li>
+						</ul>
+					</p>
+				</div>
+			</div>
+		</div>
+
+	<br>
+	<br>
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="resume-wrap ftco-animate">
+					<span class="date">Oct 2023– Dec 2023</span>
+					<h2>Data Analyst Intern</h2>
+					<span class="position">Nanak Delight</span>
+					<!-- <p class="mt-4">Merkle, a leading CXM and media company with over 10K+ professionals globally. It's a part of Dentsu International.  -->
+						<ul>
+							<li>Analyzed and managed datasets related to exports and imports, ensuring data accuracy and compliance with industry standards.</li>
+							<li>Developed data analysis tools to extract meaningful insights, contributing to informed decision-making in the exports and imports domain.</li>
+							<li>Optimized data workflows, improving efficiency by 60% to support data-driven strategies for exports and imports operations.</li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="resume-wrap ftco-animate">
+					<span class="date">Sep 2023– Dec 2023</span>
+					<h2>Data Labelling Intern</h2>
+					<span class="position">Reflexion.ai</span>
+					<!-- <p class="mt-4">iQuanti is a data-driven digital marketing analytics and solutions company, helps top 100 global brands.  -->
+						<ul>
+							<li>Managed and curated labeled datasets for AI training purposes, ensuring data accuracy to project requirements.</li>
+							<li>Developed an efficient data annotation tool, facilitating seamless data labeling for AI models.</li>
+							<li>Optimized data annotation workflows, improving efficiency by 60% to support AI model training.</li>
+							<li>Proficient in leveraging tools and techniques for preprocessing and analyzing large-scale datasets.</li>
+						</ul>
+					</p>
+				</div>
+			</div>
+		</div>
+
 		<br>
 		<br>
-
-		
-
 
 		<div class="row">
 			<h1 class="big-4">Education</h1>
@@ -427,17 +439,8 @@
     					<p class="mt-4">CGPA: 8.0</p>
     				</div>
     			</div>
-
-
-    		<!-- <div class="row justify-content-center mt-5">
-    			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
-    			</div>
     		</div>
-    	</div> -->
     </section>
-
-   
 
     <section class="ftco-section" id="project-section">
       <div class="container">
@@ -473,7 +476,7 @@
 				<a href="https://github.com/Praveen9131/medical_prescription_with-gemini" class="block-20 zoom-effect" style="background-image: url('images/medical.webp');"></a>
 				<div class="text mt-3 float-right d-block">
 				  <h3 class="heading"><a href="https://github.com/Praveen9131/medical_prescription_with-gemini">Medical Prescription with Gemini</a></h3>
-				  <p>Developed  medical prescription using Gemini API </p>
+				  <p>Developed medical prescription using Gemini API.</p>
 				</div>
 			  </div>
 			</div>
@@ -483,25 +486,25 @@
 			<!-- Second Row: 3 Projects -->
 			<div class="col-md-4 d-flex ftco-animate">
 			  <div class="blog-entry">
-				<a href="https://github.com/ShilpaShaw17/Credit_Card_Financial_Dashboard/tree/main" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');"></a>
+				<a href="https://github.com/praveen9131/Credit_Card_Financial_Dashboard/tree/main" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');"></a>
 				<div class="text mt-3 float-right d-block">
-				  <h3 class="heading"><a href="https://github.com/ShilpaShaw17/Credit_Card_Financial_Dashboard/tree/main">Credit Card Financial Dashboard</a></h3>
+				  <h3 class="heading"><a href="https://github.com/praveen9131/Credit_Card_Financial_Dashboard/tree/main">Credit Card Financial Dashboard</a></h3>
 				  <p>Customer segmentation uses clustering (unsupervised ML) models to recommend products and services.</p>
 				</div>
 			  </div>
 			</div>
 			<div class="col-md-4 d-flex ftco-animate">
 			  <div class="blog-entry justify-content-end">
-				<a href="https://github.com/ShilpaShaw17/Sales_forecast_time_series" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg');"></a>
+				<a href="https://github.com/praveen9131/Sales_forecast_time_series" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg');"></a>
 				<div class="text mt-3 float-right d-block">
-				  <h3 class="heading"><a href="https://github.com/ShilpaShaw17/Sales_forecast_time_series">Sales Forecast-Time Series Analysis</a></h3>
+				  <h3 class="heading"><a href="https://github.com/praveen9131/Sales_forecast_time_series">Sales Forecast-Time Series Analysis</a></h3>
 				  <p>Used multiple machine learning models to forecast sales (retail store) and performed time series analysis.</p>
 				</div>
 			  </div>
 			</div>
 			<div class="col-md-4 d-flex ftco-animate">
 			  <div class="blog-entry justify-content-end">
-				<a href="https://github.com/ShilpaShaw17/BCG-Data-Science-Job-Simulation" class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg');"></a>
+				<a href="https://github.com/praveen9131/BCG-Data-Science-Job-Simulation" class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg');"></a>
 				<div class="text mt-3 float-right d-block">
 				  <h3 class="heading"><a href="https://github.com/ShilpaShaw17/BCG-Data-Science-Job-Simulation">BCG-Data-Science-Job-Simulation</a></h3>
 				  <p>Completed a customer churn analysis simulation to identify essential client data and outline a strategic investigation approach.</p>
@@ -509,9 +512,6 @@
 			  </div>
 			</div>
 		  </div>
-		  
-		
-		
     </section>
 
 
@@ -542,16 +542,6 @@
             <p>Below are the details to reach out to me!</p>
           </div>
         </div>
-<!-- 
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
-          		<h3 class="mb-4">Address</h3>
-	            <p>Kolkata/Bengaluru, India</p>
-	          </div> -->
 			  <div class="container">
 				<div class="row justify-content-center">
 				  <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -574,58 +564,7 @@
 				  </div>
 				</div>
 			  </div>
-          <!-- <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-globe"></span>
-          		</div>
-          		<h3 class="mb-4">Download Resume</h3>
-	            <p><a href="#">resumelink</a></p>
-	          </div>
-          </div> -->
-
-		  <!-- <div class="container">
-			<br>
-			<br>
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>Have a<span> Question?  </span> <a href="https://forms.gle/uLaTShUKXraAvHJ77" class="btn btn-primary py-3 px-5">Click Here</a> </h2>
-				</div>
-			</div>
-				<br>
-					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-					  <li class="ftco-animate normal-txt">Find me on  </li>
-					  <li class="ftco-animate"><a href="https://www.youtube.com/@RishabhMishraOfficial"><span class="icon-youtube"></span></a></li>
-					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/rishabhnmishra/"><span class="icon-linkedin"></span></a></li>  
-					  <li class="ftco-animate"><a href="https://twitter.com/rishabhnmishra"><span class="icon-twitter"></span></a></li>
-					  <li class="ftco-animate"><a href="https://twitter.com/rishabhnmishra"><span class="icon-facebook"></span></a></li>
-				      <li class="ftco-animate"><a href="https://www.instagram.com/rishabhnmishra/"><span class="icon-instagram"></span></a></li>
-					</ul>
-				<br>
-		   </div>
-   </div> -->
- </section>
-
-
- 
-	
-    <!-- <footer class="ftco-footer ftco-section">
-		<div class="container">
-		  <div class="row">
-			<div class="col-md-12 text-center">
-  
-			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by Jogi praveen <i class="icon-heart color-danger" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank"></a>
-	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-			</div>
-		  </div>
-		</div>
-	  </footer> 
-
-
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
+  </section>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
